@@ -9,5 +9,9 @@ class BattlesController extends \Phalcon\Mvc\Controller
 
     }
 
+	public function virginiaAction()
+	{
+		echo $this->view->render('virginia', 'index');
+	}
 }
 
