@@ -1,4 +1,4 @@
-<h1>This is a Nav Menu</h1>
+<h1>This is a new Nav Menu</h1>
 
 <ul class="sidebar-menu">
     <li class="header">United States Civil War</li>
