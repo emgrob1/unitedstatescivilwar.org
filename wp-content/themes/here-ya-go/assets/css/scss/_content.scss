@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Content (Pages & Posts)
+   ========================================================================== */
+
+article {
+	position: relative;
+	@include margin-trailer(1);
+	&:after {
+		clear: both;
+		display: block;
+		content: "\f0c8\00a0\f0c8\00a0\f0c8\00a0\f0c8\00a0\f0c8";
+		color: $secondary-color;
+		font-family: FontAwesome;
+		text-align: center;
+		@include rhythm(0, 1, 1, 0);
+	}
+}
+
+/* Entry Images */
+
+.entry-image {
+	overflow: hidden;
+	img {
+		display: block;
+	}
+}
+
+/* Entry Categories */
+
+.entry-category {
+  display: block;
+ 	font-weight: bold;
+	text-transform: uppercase;
+	a {
+		color: $tertiary-color;
+	}
+}
+
+/* Entry Title */
+
+.entry-title {
+	text-transform: uppercase;
+	margin-bottom: 0;
+	@include adjust-font-size-to(30px, 1);
+	&.page {
+		@include margin-trailer(1);
+	}
+	a {
+		font-weight: normal;
+	}
+}
+
+.sticky {
+	.entry-title:before {
+		content: "\f08d";
+		float: left;
+		display: block;
+		color: $secondary-color;
+		font-family: FontAwesome;
+		padding-right: 5px;
+		}
+}
+
+/* Entry Meta */
+
+.entry-meta {
+	display: block;
+	text-transform: uppercase;
+	padding-right: $hspace/2;
+	@include margin-trailer(1);
+	a {
+		color: $tertiary-color;
+	}
+	.meta-element {
+		float: left;
+		padding-right: 5px;
+	}
+	.meta-element:before {
+		display: block;
+		float: left;
+		color: $secondary-color;
+		font-family: FontAwesome;
+		padding-right: 5px;
+	}
+	.entry-date:before {
+		content: "\f017";
+	}
+	.byline:before {
+		content: "\f007";
+	}
+	.comment-link:before {
+		content: "\f086";
+	}
+}
+
+.post-format {
+	font-weight: bold;
+}
+
+/* Entry Content */
+
+.entry-content {
+	clear: both;
+	a {
+		font-weight: bold;
+	}
+}
+
+/* Entry Tags */
+
+.entry-tags {
+	text-transform: capitalize;
+	@include margin-trailer(1);
+	a {
+		display: inline-block;
+		padding: 0 5px;
+		margin-right: 5px;
+		background: #f9f9f9;
+		&:before {
+			display: block;
+			float: left;
+			content: "\f02b";
+			font-size: 13px;
+			font-family: FontAwesome;
+			padding-right: 5px;
+		}
+		&:hover {
+			color: #fff;
+			background: $secondary-color;
+		}
+	}
+}
+
+/* Post Navigation */
+
+.post-navigation {
+	clear: both;
+	display: block;
+	@include margin-trailer(1);
+	a {
+		display: block;
+		background: #f9f9f9;
+		padding-left: $hspace;
+		padding-right: $hspace;
+		@include rhythm(0,0.5,0.5,0);
+		&:hover {
+			color: #fff;
+			background: $secondary-color;
+		}
+	}
+	span.next-post-label,
+	span.previous-post-label {
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.previous-post {
+		float: left;
+		width: span(6 of 12);
+	}
+	.next-post {
+		float: right;
+		text-align: right;
+		width: span(6 of 12);
+	}	
+}
+
+/* Pages Navigation */
+
+.pages-navigation {
+	text-align: center;
+	@include margin-trailer(1);
+}
+
+.page-numbers {
+	display: inline-block;
+	background: #eee;
+	padding: 0 10px;
+	text-transform: uppercase;
+	&:hover {
+			color: #fff;
+			background: $secondary-color;
+		}
+	&.current {
+		background: #ddd;
+		&:hover {
+			color: #333;
+		}
+	}
+}
+
+/* Paginated Posts & Pages */
+
+.page-links {
+	text-transform: uppercase;
+	@include margin-trailer(1);
+}
+
+/* Edit Link */
+
+.edit-link {
+	position: absolute;
+	top: 0;
+	right: 0;
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		color: #fff;
+		background: $secondary-color;
+		padding: 0 10px;
+		color: #fff;
+		&:hover {
+			background: $tertiary-color;
+		}
+		&:before {
+			display: block;
+			float: left;
+			content: "\f044";
+			font-family: FontAwesome;
+			padding-right: 5px;
+		}
+	}
+}
+
+/* More Link */
+
+.more-link {
+	color: $secondary-color;
+}
+
+/* Embedded Tweets */
+
+.twitter-tweet {
+	width: 100%;
+}
+
+/* 404 */
+
+.not-found-title {
+}
+
+/* Post Format Specific */
+
+.format-aside .entry-title,
+.format-link .entry-title,
+.format-quote .entry-title,
+.format-status .entry-title {
+	display: none;
+}

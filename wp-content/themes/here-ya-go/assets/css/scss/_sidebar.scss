@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Right sidebar styling
+   ========================================================================== */
+
+.right-sidebar .widget {
+	background: #f9f9f9;
+	overflow: hidden;
+	padding-left: $hspace;
+	padding-right: $hspace;
+	@include box-shadow( tint(#303741, 90) 5px 5px);
+	@include rhythm(0, 1, 1, 1);
+	// @include debug-vertical-alignment; // uncomment to reveal grid for baseline debugging
+}

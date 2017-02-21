@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Flexslider 
+   ========================================================================== */
+
+.flexslider {
+	display: none;
+	position: relative;
+	background: none;
+	padding: 0;
+	margin: 0;
+	border: none;
+	overflow: hidden;
+	@include rhythm(1,0,0,0);
+	@include box-shadow( tint(#303741, 90) 5px 5px);
+	@include border-radius(0);
+	.slides {
+		display: block;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		li {
+			list-style: none;
+		}
+	}
+	.flex-control-nav {
+		position: absolute;
+		bottom: 0;
+		display: block;
+		z-index: 100;
+		li {
+			list-style: none;
+			a {
+				background-color: white;
+				display: inline-block;
+				height: 15px;
+				width: 15px;
+				opacity: 0.5;
+				@include border-radius(100%);
+				&.flex-active {
+					background-color: white;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.flex-direction-nav {
+		li {
+			line-height: 40px;
+			list-style: none;
+			a {
+				display: block;
+				height: 40px;
+				width: 40px;
+				color: #fff;
+			}
+		}
+	}
+	&:hover {
+		.flex-prev {
+			left: 30px
+		}
+		.flex-next {
+			right: 30px
+		}
+	}
+}
+
+.slider-caption {
+	position: absolute;
+	display: block;
+	bottom: 0;
+	width: 100%;
+	color: #fff;
+	background: rgba(0,0,0,0.5);
+	padding-left: $hspace;
+	padding-right: $hspace;
+	z-index: 99;
+	@include rhythm(0, 1, 1, 0);
+	.slider-title {
+		color: #fff;
+		@include margin-trailer(0.25);
+		@include adjust-font-size-to(30px, 1);
+		a {
+			color: #fff;
+		}
+	}
+	p {
+		@include margin-trailer(0.25);
+	}
+	.slider-read-more {
+		display: inline-block;
+		float: right;
+		color: #fff;
+		padding: 0 15px;
+		background: $secondary-color;
+		text-transform: uppercase;
+		cursor: pointer;
+		&:hover {
+			background: $tertiary-color;
+		}
+	}
+}
+
+@media only screen and ( max-width: 960px ) {
+	.slider-caption {
+		text-align: center;
+		z-index: 99;
+		padding-left: $hspace*2;
+		padding-right: $hspace*2;
+		@include rhythm(0, 1, 1, 0);
+		.slider-title {
+			@include margin-trailer(0.5);
+			@include adjust-font-size-to(24px, 1);
+			a {
+				color: #fff;
+			}
+		}
+		p {
+			display: none;
+		}
+		.slider-read-more {
+			display: inline-block;
+			float: none;
+			margin: 0 auto;
+			@include margin-trailer(0.5);
+		}
+	}
+}
+
+#demo-slider .flexslider {
+}

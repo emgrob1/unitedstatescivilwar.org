@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Postscript section - uses a single widget area, wigets appear in four
+   columns - setup using Compass & Susy in _layout.scss.  
+   ========================================================================== */
+
+#postscript {
+	clear: both;
+	padding: $base-line-height 0;
+	background: tint($primary-color, 90);
+	h3 {
+		font-family: 'Roboto', sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+#postscript {
+	.widget {
+		@include margin-trailer(1);
+	}
+}
+
+@include susy-breakpoint($computer, 12, $no-query: '.no-mq') {
+	// Postscript Widgets 
+	#postscript {
+		.widget {
+			@include gallery(3 of 12);
+		}
+	}
+}

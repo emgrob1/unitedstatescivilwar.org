@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Primary navigation style (Includes media queries for mobile)
+   ========================================================================== */
+
+#nav {
+	position: relative;
+	width: 100%;
+	z-index: 100;
+	> a {
+		display: none;
+	}
+}
+
+.menu,
+.primary-navigation {
+	ul {
+		float: right;
+		margin-bottom: 0;
+	}
+	li {
+		position: relative;
+		float: left;
+		list-style: none;
+		a {
+			display: block;
+			text-transform: uppercase;
+			background: shade($primary-color, 30);
+			padding: 0 15px;
+			margin-left: 10px;
+			@include adjust-leading-to(1.5);
+		}	
+		&:hover > a {
+			background: $secondary-color;
+		}
+	}
+
+	/* Second Level */
+
+	li ul {
+		position: absolute;
+		display: none;
+		left: 0;
+		top: 100%;
+		padding: 0;
+		margin: 0;
+	  margin-left: 10px;
+		@include box-shadow( shade($secondary-color, 20) 6px 6px);
+		li {
+			border-bottom: 1px solid shade($secondary-color, 5);
+			a {
+				width: 300px;
+				line-height: rhythm(1.5);
+			 	background: $secondary-color;
+				margin: 0;
+				padding: 0 $base-line-height;
+				&:hover {
+					background: shade($secondary-color, 5);
+				}
+			}
+		}
+	}
+	li:hover {
+		> ul {
+			display: block;
+		}
+	}
+	li ul ul {
+		top: 0;
+		left: 100%;
+		margin-left: 0px;
+	}
+
+}
+
+/* Mobile menu (for screen widths less than 960px) */
+
+@media only screen and ( max-width: 960px ) {
+
+	/* Compensation for admin bar when logged in on mobile devices */
+	.admin-bar #nav {
+		margin-top: 32px
+	}
+
+  .site-header-inner {
+  	margin-top: rhythm(1.5);
+  	.site-title {
+  		float: none;
+  		margin: 0 auto;
+  		text-align: center;
+  	}
+  }
+
+	#nav {
+		position: absolute;
+		height: rhythm(1.5);
+	  top: 0px;
+	  right: 0px;
+	  background: shade($primary-color, 30);
+		> a {
+			position: relative;
+			float: right;
+			font-size: rhythm(1);
+			line-height: rhythm(1.5);
+			height: rhythm(1.5);
+			padding-right: 15px;
+		}
+	  &:not(:target) > a:first-of-type,
+	  &:target > a:last-of-type {
+	    display: inline-block;
+	  }
+	  &:target div > ul {
+	  	display: block;
+	  }
+	}
+	     
+	/* First Level */
+	 
+	.menu,
+	.primary-navigation {
+		clear: both;
+		ul {
+			position: absolute;
+			float: none;
+	    display: none;
+	    width: 100%; 
+	    height: auto;
+	    > li {
+		  	float: none;
+			  a {
+			  	line-height: rhythm(1.5);
+					padding: 0 15px;
+			  	margin-left: 0;
+			  	border-top: 1px solid #444;
+			  	border-bottom: 1px solid #222; 
+			  }
+			  &:hover > a {
+			  	color: $secondary-color;
+			  	background: shade($primary-color, 60);
+			  }
+			}
+	  }
+	 
+	  /* Second Level */
+	 
+	  li ul {
+	    position: relative;
+	    margin-left: 0;
+	    width: 100%; 
+	    z-index: 100;
+	    @include box-shadow(#ffffff 0px 0px);
+	    li {
+	    	border-bottom: 1px solid shade(shade($primary-color, 30), 100);
+    		a {
+    			text-transform: capitalize;
+    			background: shade(shade($primary-color, 30), 100);
+	    		width: 100%;
+	    		&:hover  {
+	    			background: $secondary-color;
+	    		}
+	    	}
+		    &:hover a {
+		    	color: #ffffff;
+		    	background: $secondary-color;
+		    }
+	    }
+	  }
+
+	  /* Third Level +  */
+
+	  li ul ul {
+		top: 0;
+		left: 0;
+		margin-left: 0px;
+	}
+	}  
+}    
+
+/* Compensation for admin bar when logged in on a mobile device */  
+
+@media only screen and ( max-width: 768px ) {
+	.admin-bar #nav {
+		margin-top: 46px
+	}
+}

@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Header styling
+   ========================================================================== */
+
+.site-header-inner {
+	color: #fff;
+	background: $primary-color;
+	@include rhythm(0, 1.25, 1.25, 0);
+  // @include debug-vertical-alignment; // uncomment to reveal grid for baseline debugging
+	a {
+		color: #fff;
+	}
+}
+
+.site-title {
+	float: left;
+	display: block;
+	font-family: 'Changa One', cursive;
+	font-size: 45px;
+	text-transform: uppercase;
+	text-shadow: 5px 5px shade($primary-color, 60);
+	margin-bottom: 0;
+	@include adjust-leading-to(1.5);
+	a {
+		display: block;
+		color: #fff;
+		font-weight: normal;
+		@include transition-duration(1s);
+  	@include transition-timing-function(ease-in);
+		&:hover {
+			color: $secondary-color;
+			.highlight {
+				color: #fff;
+			}
+		}
+		.highlight {
+			color: $secondary-color;
+			@include transition-duration(1s);
+  		@include transition-timing-function(ease-in);
+		}
+	}
+}
